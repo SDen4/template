@@ -12,8 +12,12 @@ async function getData() {
 }
 
 function* getInitData() {
-  const initData: initDataType = yield getData();
-  yield put(saveInitData(initData));
+  try {
+    const initData: initDataType = yield getData();
+    yield put(saveInitData(initData));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export function* rootSearchSaga(): Generator<unknown> {
