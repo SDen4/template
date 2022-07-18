@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { getInitDataSaga, saveRndData } from '../../store/main/duck';
 
-import { selectRndData } from '../../store/main/selectors/selectors';
+import { selectRndData } from '../../store/main/selectors';
 
 import styles from './styles.module.css';
 
