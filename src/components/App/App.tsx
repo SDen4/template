@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import Header from '../Header';
+
 import { getInitDataSaga, saveRndData } from '../../store/main/duck';
 
 import { selectRndData } from '../../store/main/selectors';
@@ -24,9 +26,7 @@ const App = () => {
 
   return (
     <div className={styles.app}>
-      <header className={styles.appHeader}>
-        React - Redux - Redux-saga - Redux-toolkit - Axios
-      </header>
+      <Header />
 
       <div>
         <button type="button" onClick={onButtonClick}>
@@ -34,7 +34,7 @@ const App = () => {
         </button>
       </div>
 
-      <div className={styles.appHeader}>
+      <div>
         <span>Random number from the store: </span>
         <span>{randomData}</span>
       </div>
