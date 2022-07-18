@@ -9,7 +9,7 @@ import { selectRndData } from '../../store/main/selectors';
 
 import styles from './styles.module.css';
 
-const App = () => {
+const App: React.FC = () => {
   const dispatch = useDispatch();
 
   const randomData: number = useSelector(selectRndData);
@@ -25,20 +25,20 @@ const App = () => {
   };
 
   return (
-    <div className={styles.app}>
+    <main className={styles.app}>
       <Header />
 
-      <div>
+      <section>
         <button type="button" onClick={onButtonClick}>
           Save RND data
         </button>
-      </div>
+      </section>
 
-      <div>
+      <section className={styles.section}>
         <span>Random number from the store: </span>
         <span>{randomData}</span>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

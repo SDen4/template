@@ -9,3 +9,7 @@
   box-sizing: border-box;
   background-color: #282c34;
 }
+
+.section span {
+  color: #fff;
+}
