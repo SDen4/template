@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-import Header from '../Header';
 
 import { getInitDataSaga, saveRndData } from '../../store/main/duck';
 
 import { selectRndData } from '../../store/main/selectors';
 
 import styles from './styles.module.css';
-import Button from '../Button';
+
+const LazyButton = React.lazy(() => import('../Button'));
+const LazyHeader = React.lazy(() => import('../Header'));
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -27,10 +27,18 @@ const App: React.FC = () => {
 
   return (
     <main className={styles.app}>
-      <Header />
+      <Suspense fallback={<p>Loading...</p>}>
+        <LazyHeader />
+      </Suspense>
 
       <section className={styles.section}>
-        <Button type="button" title="Button text" onBtnClick={onButtonClick} />
+        <Suspense fallback={<p>Loading...</p>}>
+          <LazyButton
+            type="button"
+            title="Button text"
+            onBtnClick={onButtonClick}
+          />
+        </Suspense>
       </section>
 
       <section className={styles.section}>
