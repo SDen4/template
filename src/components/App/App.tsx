@@ -8,6 +8,7 @@ import { getInitDataSaga, saveRndData } from '../../store/main/duck';
 import { selectRndData } from '../../store/main/selectors';
 
 import styles from './styles.module.css';
+import Button from '../Button';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -28,10 +29,8 @@ const App: React.FC = () => {
     <main className={styles.app}>
       <Header />
 
-      <section>
-        <button type="button" onClick={onButtonClick}>
-          Save RND data
-        </button>
+      <section className={styles.section}>
+        <Button type="button" title="Button text" onBtnClick={onButtonClick} />
       </section>
 
       <section className={styles.section}>

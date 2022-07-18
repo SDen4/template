@@ -10,6 +10,18 @@
   background-color: #282c34;
 }
 
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
 .section span {
   color: #fff;
 }
