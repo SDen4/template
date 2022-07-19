@@ -46,7 +46,7 @@ const App: React.FC = () => {
           randomData > 0.5 ? styles.redText : ''
         }`}
       >
-        <span>Random number from the store:</span>
+        <span>Random number from the store:&nbsp;</span>
         <span>{randomData}</span>
       </section>
     </main>
