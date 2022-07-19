@@ -41,8 +41,12 @@ const App: React.FC = () => {
         </Suspense>
       </section>
 
-      <section className={styles.section}>
-        <span>Random number from the store: </span>
+      <section
+        className={`${styles.section} ${
+          randomData > 0.5 ? styles.redText : ''
+        }`}
+      >
+        <span>Random number from the store:</span>
         <span>{randomData}</span>
       </section>
     </main>
