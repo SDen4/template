@@ -7,7 +7,7 @@ import { selectRndData } from '../../store/main/selectors';
 
 import styles from './styles.module.css';
 
-const LazyButton = React.lazy(() => import('../Button'));
+const LazyButton = React.lazy(() => import('../ui/Button'));
 const LazyHeader = React.lazy(() => import('../Header'));
 
 const App: React.FC = () => {
