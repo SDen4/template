@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import styles from './styles.module.css';
 
@@ -16,4 +16,4 @@ const Button: React.FC<IProps> = ({ type, onBtnClick, title }) => {
   );
 };
 
-export default Button;
+export default memo(Button);
