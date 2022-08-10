@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
-import { initDataType } from '../types/types';
+import { initDataType } from '../../types/main/types';
 
 const main = 'main';
 

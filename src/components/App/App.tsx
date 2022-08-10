@@ -1,9 +1,9 @@
 import React, { Suspense, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getInitDataSaga, saveRndData } from '../../store/main/duck';
+import { getInitDataSaga, saveRndData } from '../../store/reducers/main';
 
-import { selectRndData } from '../../store/main/selectors';
+import { selectRndData } from '../../store/selectors/main';
 
 import styles from './styles.module.css';
 

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { mainRootReducer } from './main/duck';
+import { mainRootReducer } from './reducers/main';
 
 const RootReducer = combineReducers({
   main: mainRootReducer,

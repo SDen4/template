@@ -1,4 +1,4 @@
-import { API } from '../../utils/api';
+import { API } from '../utils/api';
 
 async function httpRequest() {
   const response = await API.get('getInitData').then((res) => res.data);

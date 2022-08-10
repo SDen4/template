@@ -1,10 +1,10 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { getInitDataSaga, saveInitData } from '../duck';
+import { getInitDataSaga, saveInitData } from '../../reducers/main';
 
-import httpRequest from '../httpRequest';
+import httpRequest from '../../httpRequest';
 
-import { initDataType } from '../types/types';
+import { initDataType } from '../../types/main/types';
 
 function* getInitData() {
   try {
