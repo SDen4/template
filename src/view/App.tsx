@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { getInitDataSaga, saveRndData } from '../store/reducers/main';
 
-import { selectRndData } from '../selectors/main';
+import { rndDataSelect } from '../selectors/main';
 
 import styles from './styles.module.css';
 
@@ -13,7 +13,7 @@ const LazyHeader = React.lazy(() => import('../components/Header'));
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
-  const randomData: number = useSelector(selectRndData);
+  const rndData: number = useSelector(rndDataSelect);
 
   useEffect(() => {
     dispatch(getInitDataSaga());
@@ -42,12 +42,10 @@ const App: React.FC = () => {
       </section>
 
       <section
-        className={`${styles.section} ${
-          randomData > 0.5 ? styles.redText : ''
-        }`}
+        className={`${styles.section} ${rndData > 0.5 ? styles.redText : ''}`}
       >
         <span>Random number from the store:&nbsp;</span>
-        <span>{randomData}</span>
+        <span>{rndData}</span>
       </section>
     </main>
   );

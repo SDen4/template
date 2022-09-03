@@ -1,1 +1,1 @@
-export { selectInitData, selectRndData } from './selectors';
+export { initDataSelect, rndDataSelect } from './selectors';
