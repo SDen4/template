@@ -7,7 +7,7 @@ const main = 'main';
 
 // initial state =====================
 const initDataState: any[] = [];
-const randomDataState: number = 0;
+const randomDataState = 0;
 
 // Actions (sagas) ===================
 export const getInitDataSaga = createAction(`${main}/GET_INIT_DATA_SAGA`);

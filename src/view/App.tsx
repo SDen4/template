@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getInitDataSaga, saveRndData } from '../store/reducers/main';
 
@@ -21,7 +21,6 @@ const App: React.FC = () => {
 
   const onButtonClick = () => {
     const randomNum = Math.random();
-    console.log(randomNum);
     dispatch(saveRndData(randomNum));
   };
 

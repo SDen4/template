@@ -4,10 +4,10 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
 
-import RootSaga from './store/rootSaga';
-import RootReducer from './store/rootReducer';
-
 import App from './view/App';
+
+import RootReducer from './store/rootReducer';
+import RootSaga from './store/rootSaga';
 
 import './index.css';
 
