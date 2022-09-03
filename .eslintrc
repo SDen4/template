@@ -124,7 +124,7 @@
                 "^react",
                 "^redux",
                 "^@?\\w",
-                "^(@|@company|@ui|components|utils|config|vendored-lib)(/.*|$)"
+                "^(@|@company|@ui|config|vendored-lib)(/.*|$)"
               ],
               [
                 "^\\$+",
@@ -134,9 +134,10 @@
                 "^\\.(?!/?$)",
                 "^\\./?$"
               ],
-              ["/ui/", "components"],
-              ["store"],
+              ["ui", "components", "view"],
+              ["store", "reducers"],
               ["selectors"],
+              ["api", "utils"],
               ["model"],
               ["constants"],
               ["^.+\\.s?css$"]
