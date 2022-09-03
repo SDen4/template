@@ -3,7 +3,7 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 
 import { initDataType } from '../../../model/main/types';
 
-const main = 'main';
+const main = 'MAIN';
 
 // initial state =====================
 const initDataState: any[] = [];

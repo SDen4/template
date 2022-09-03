@@ -1,16 +1,18 @@
 import React, { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { Header } from '../components/Header';
+
 import { getInitDataSaga, saveRndData } from '../store/reducers/main';
 
 import { rndDataSelect } from '../selectors/main';
 
 import styles from './styles.module.css';
 
+// only for example of lazy import))
 const LazyButton = React.lazy(() => import('../components/ui/Button'));
-const LazyHeader = React.lazy(() => import('../components/Header'));
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const dispatch = useDispatch();
 
   const rndData: number = useSelector(rndDataSelect);
@@ -26,9 +28,7 @@ const App: React.FC = () => {
 
   return (
     <main className={styles.app}>
-      <Suspense fallback={<p>Loading...</p>}>
-        <LazyHeader />
-      </Suspense>
+      <Header />
 
       <section className={styles.section}>
         <Suspense fallback={<p>Loading...</p>}>
@@ -49,5 +49,3 @@ const App: React.FC = () => {
     </main>
   );
 };
-
-export default App;

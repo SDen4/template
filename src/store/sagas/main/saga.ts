@@ -1,6 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import httpRequest from '../../../api/main/httpRequest';
+import { httpRequest } from '../../../api/main/httpRequest';
 import { getInitDataSaga, saveInitData } from '../../reducers/main';
 
 import { initDataType } from '../../../model/main/types';
