@@ -2,9 +2,9 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 import { getInitDataSaga, saveInitData } from '../../reducers/main';
 
-import httpRequest from '../../httpRequest';
+import httpRequest from '../../../api/main/httpRequest';
 
-import { initDataType } from '../../types/main/types';
+import { initDataType } from '../../../model/main/types';
 
 function* getInitData() {
   try {

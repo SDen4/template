@@ -1,14 +1,14 @@
 import React, { Suspense, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getInitDataSaga, saveRndData } from '../../store/reducers/main';
+import { getInitDataSaga, saveRndData } from '../store/reducers/main';
 
-import { selectRndData } from '../../store/selectors/main';
+import { selectRndData } from '../selectors/main';
 
 import styles from './styles.module.css';
 
-const LazyButton = React.lazy(() => import('../ui/Button'));
-const LazyHeader = React.lazy(() => import('../Header'));
+const LazyButton = React.lazy(() => import('../components/ui/Button'));
+const LazyHeader = React.lazy(() => import('../components/Header'));
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
