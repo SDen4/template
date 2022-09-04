@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "$*":["*"]
+      "*":["*"]
     },
     "lib": ["ES6","dom","dom.iterable","esnext"],
     "experimentalDecorators": true,

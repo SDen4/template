@@ -21,11 +21,3 @@
 .section:last-child {
   margin-bottom: 0;
 }
-
-.section span {
-  color: #fff;
-}
-
-.redText span:last-child {
-  color: red;
-}

@@ -1,11 +1,10 @@
 import React, { Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Header } from 'components/Header';
+import { Result } from 'components/Result';
 
 import { getInitDataSaga, saveRndData } from 'store/reducers/main';
-
-import { rndDataSelect } from 'selectors/main';
 
 import styles from './styles.module.css';
 
@@ -14,8 +13,6 @@ const LazyButton = React.lazy(() => import('components/ui/Button'));
 
 export const App: React.FC = () => {
   const dispatch = useDispatch();
-
-  const rndData: number = useSelector(rndDataSelect);
 
   useEffect(() => {
     dispatch(getInitDataSaga());
@@ -40,11 +37,8 @@ export const App: React.FC = () => {
         </Suspense>
       </section>
 
-      <section
-        className={`${styles.section} ${rndData > 0.5 ? styles.redText : ''}`}
-      >
-        <span>Random number from the store:&nbsp;</span>
-        <span>{rndData}</span>
+      <section className={`${styles.section}`}>
+        <Result />
       </section>
     </main>
   );
