@@ -8,7 +8,7 @@ import { getInitDataSaga, saveRndData } from 'store/reducers/main';
 
 import styles from './styles.module.css';
 
-// only for example of lazy import))
+// only for example of lazy import ;-)
 const LazyButton = React.lazy(() => import('components/ui/Button'));
 
 export const App: React.FC = () => {
@@ -24,7 +24,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <main className={styles.app}>
+    <main className={styles.main}>
       <Header />
 
       <section className={styles.section}>

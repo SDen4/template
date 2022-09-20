@@ -5,20 +5,20 @@ import { initDataType } from 'model/main/types';
 
 const main = 'MAIN';
 
-// initial state =====================
+// initial state ==========================================================
 const initDataState: any[] = [];
 const randomDataState = 0;
 
-// Actions (sagas) ===================
+// Actions (sagas) ========================================================
 export const getInitDataSaga = createAction(`${main}/GET_INIT_DATA_SAGA`);
 
-// Actions ===========================
+// Actions ================================================================
 export const saveInitData = createAction<initDataType>(
   `${main}/SAVE_INIT_DATA`,
 );
 export const saveRndData = createAction<number>(`${main}/SAVE_RND_DATA`);
 
-// Reducers ==========================
+// Reducers ===============================================================
 const initData = createReducer(initDataState, {
   [saveInitData.toString()]: (_state, action) => action.payload,
 });
@@ -26,7 +26,7 @@ const rndData = createReducer(randomDataState, {
   [saveRndData.toString()]: (_state, action) => action.payload,
 });
 
-// Root Reducer ======================
+// Root Reducer ===========================================================
 const mainRootReducer = combineReducers({ initData, rndData });
 
 export default mainRootReducer;
