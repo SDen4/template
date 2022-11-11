@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface IInitialState {
+export interface IInitialState {
   initData: string[];
   rndData: number | null;
 }

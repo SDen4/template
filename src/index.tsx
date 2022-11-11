@@ -6,20 +6,23 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { App } from 'view/App';
 
-import { rootReducer } from 'store/rootReducer';
 import { rootSaga } from 'store/rootSaga';
+import mainReducer from 'store/main/reducers/reducer';
 
 import './index.css';
 
-const saga = createSagaMiddleware();
+const sagaMiddleWare = createSagaMiddleware();
+
+const reducers = { main: mainReducer };
 
 const store = configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(saga),
+  reducer: reducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(sagaMiddleWare),
   devTools: process.env.NODE_ENV !== 'production',
 });
 
-saga.run(rootSaga);
+sagaMiddleWare.run(rootSaga);
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
@@ -29,3 +32,6 @@ root.render(
     <App />
   </Provider>,
 );
+
+// @ts-ignore
+export type AppStateType = ReturnType<typeof reducers>;
