@@ -1,26 +1,31 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { FC, lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Header } from 'components/Header';
 import { Result } from 'components/Result';
 
-import { getInitDataSaga, saveRndData } from 'store/reducers/main';
+import { getInitDataSaga } from 'store/main/actions';
+import { reset, rndData } from 'store/main/reducers';
 
 import styles from './styles.module.css';
 
 // only for example of lazy import ;-)
-const LazyButton = React.lazy(() => import('components/ui/Button'));
+const LazyButton = lazy(() => import('components/ui/Button'));
 
-export const App: React.FC = () => {
+export const App: FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getInitDataSaga());
+
+    return () => {
+      dispatch(reset());
+    };
   }, [dispatch]);
 
   const onButtonClick = () => {
     const randomNum = Math.random();
-    dispatch(saveRndData(randomNum));
+    dispatch(rndData(randomNum));
   };
 
   return (

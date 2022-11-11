@@ -1,1 +1,1 @@
-export { initDataSelect, rndDataSelect } from './selectors';
+export * from './selectors';

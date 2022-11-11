@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import styles from './styles.module.css';
 
@@ -8,7 +8,7 @@ interface IProps {
   title: string;
 }
 
-const Button: React.FC<IProps> = ({ type, onBtnClick, title }) => {
+const Button: FC<IProps> = ({ type, onBtnClick, title }) => {
   return (
     <button className={styles.button} type={type} onClick={onBtnClick}>
       {title}
@@ -16,4 +16,4 @@ const Button: React.FC<IProps> = ({ type, onBtnClick, title }) => {
   );
 };
 
-export default memo(Button);
+export default Button;
