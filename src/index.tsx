@@ -11,18 +11,20 @@ import { rootSaga } from 'store/rootSaga';
 
 import './index.css';
 
-const saga = createSagaMiddleware();
+const sagaMiddleWare = createSagaMiddleware();
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(saga),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(sagaMiddleWare),
   devTools: process.env.NODE_ENV !== 'production',
 });
 
-saga.run(rootSaga);
+sagaMiddleWare.run(rootSaga);
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
+
 root.render(
   <Provider store={store}>
     <App />
