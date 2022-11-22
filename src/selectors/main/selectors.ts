@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { AppStateType } from 'index';
+
+import { AppStateType } from 'store/rootReducer';
 
 export const initDataSelect = createSelector(
   (store: AppStateType) => store.main.initData,
