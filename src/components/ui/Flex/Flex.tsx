@@ -1,16 +1,8 @@
-import React, { FC, memo } from 'react';
+import React, { FC, HTMLAttributes, memo, PropsWithChildren } from 'react';
 
 import classes from './styles.module.css';
 
-interface IProps {
-  children: React.ReactNode;
-  className?: string;
-  props?: any;
-  onClick?: () => void;
-  style?: React.CSSProperties | undefined;
-}
-
-export const Flex: FC<IProps> = memo(
+export const Flex: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement>>> = memo(
   ({ children, className, style, ...props }) => {
     return (
       <div className={`${classes.flex} ${className}`} style={style} {...props}>
