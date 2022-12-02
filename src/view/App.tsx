@@ -36,8 +36,12 @@ export const App: FC = () => {
         <Suspense fallback={<p>Loading...</p>}>
           <LazyButton
             type="button"
-            title="Button text"
-            onBtnClick={onButtonClick}
+            text="Button text"
+            title="Default hint text"
+            onClick={onButtonClick}
+            style={{ backgroundColor: 'red' }}
+            hidden={false}
+            accessKey="c"
           />
         </Suspense>
       </section>
