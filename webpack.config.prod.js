@@ -13,7 +13,7 @@ module.exports = {
   entry: './src/index',
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     publicPath: '/',
   },
   resolve: {
@@ -84,11 +84,11 @@ module.exports = {
       patterns: [
         {
           from: './public/manifest.json',
-          to: path.resolve(__dirname, './dist'),
+          to: path.resolve(__dirname, './docs'),
         },
         {
           from: './public/favicon.ico',
-          to: path.resolve(__dirname, './dist'),
+          to: path.resolve(__dirname, './docs'),
         },
         // { from: './src/images', to: './dist/images' },
       ],
