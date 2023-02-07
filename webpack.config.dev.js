@@ -21,7 +21,7 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.css'],
     plugins: [new TsconfigPathsPlugin({ baseUrl: 'src' })],
   },
   optimization: {
@@ -61,7 +61,10 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader', options: { modules: true } },
+        ],
       },
     ],
   },
