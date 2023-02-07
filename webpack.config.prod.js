@@ -84,11 +84,11 @@ module.exports = {
       patterns: [
         {
           from: './public/manifest.json',
-          to: path.resolve(__dirname, './dist/public'),
+          to: path.resolve(__dirname, './dist'),
         },
         {
           from: './public/favicon.ico',
-          to: path.resolve(__dirname, './dist/public'),
+          to: path.resolve(__dirname, './dist'),
         },
         // { from: './src/images', to: './dist/images' },
       ],
