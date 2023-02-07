@@ -14,7 +14,7 @@ module.exports = {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'docs'),
-    publicPath: '/',
+    publicPath: '',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
