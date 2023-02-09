@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes } from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.css';
 
 interface IProps extends HTMLAttributes<HTMLButtonElement> {
   type: 'button' | 'reset' | 'submit';

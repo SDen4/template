@@ -7,7 +7,7 @@ import { Result } from 'components/Result';
 import { getInitDataSaga } from 'store/main/actions';
 import { reset, rndData } from 'store/main/reducers';
 
-import styles from './styles.module.css';
+import styles from './styles.css';
 
 // only for example of lazy import ;-)
 const LazyButton = lazy(() => import('components/ui/Button'));
@@ -31,7 +31,6 @@ export const App: FC = () => {
   return (
     <main className={styles.main}>
       <Header />
-
       <section className={styles.section}>
         <Suspense fallback={<p>Loading...</p>}>
           <LazyButton

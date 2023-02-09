@@ -50,21 +50,12 @@ module.exports = {
       {
         test: /\.svg$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000,
-            },
-          },
-        ],
+        use: [{ loader: 'svg-url-loader', options: { limit: 10000 } }],
       },
       {
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-        },
+        options: { name: '[name].[ext]' },
       },
       {
         test: /\.css$/i,
@@ -76,13 +67,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv({
-      path: './.env',
-    }),
+    new Dotenv({ path: './.env' }),
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
     new CopyPlugin({
       patterns: [
         {

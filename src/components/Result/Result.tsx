@@ -5,7 +5,7 @@ import { Flex } from 'components/ui/Flex';
 
 import { rndDataSelect } from 'selectors/main';
 
-import styles from './styles.module.css';
+import styles from './styles.css';
 
 export const Result: FC = () => {
   const rndData = useSelector(rndDataSelect);
