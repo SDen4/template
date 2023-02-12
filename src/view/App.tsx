@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Header } from 'components/Header';
 import { Result } from 'components/Result';
 
-import { initDataSelect, loadingSelect } from 'selectors/main';
 import { getInitDataSaga } from 'store/main/actions';
 import { reset, rndData } from 'store/main/reducers';
+
+import { initDataSelect, loadingSelect } from 'selectors/main';
 
 import styles from './styles.css';
 
