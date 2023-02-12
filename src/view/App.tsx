@@ -1,9 +1,10 @@
 import React, { FC, lazy, Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from 'components/Header';
 import { Result } from 'components/Result';
 
+import { initDataSelect, loadingSelect } from 'selectors/main';
 import { getInitDataSaga } from 'store/main/actions';
 import { reset, rndData } from 'store/main/reducers';
 
@@ -14,6 +15,9 @@ const LazyButton = lazy(() => import('components/ui/Button'));
 
 export const App: FC = () => {
   const dispatch = useDispatch();
+
+  const initData = useSelector(initDataSelect);
+  const loading = useSelector(loadingSelect);
 
   useEffect(() => {
     dispatch(getInitDataSaga());
@@ -45,8 +49,12 @@ export const App: FC = () => {
         </Suspense>
       </section>
 
-      <section className={`${styles.section}`}>
+      <section className={styles.section}>
         <Result />
+      </section>
+
+      <section className={styles.section}>
+        {loading ? <p>Loading...</p> : <img src={initData} alt="todoImage" />}
       </section>
     </main>
   );

@@ -11,3 +11,8 @@ export const rndDataSelect = createSelector(
   (store: AppStateType) => store.main.rndData,
   (rndData) => rndData,
 );
+
+export const loadingSelect = createSelector(
+  (store: AppStateType) => store.main.loading,
+  (loading) => loading,
+);

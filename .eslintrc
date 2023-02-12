@@ -139,6 +139,7 @@
               ["selectors"],
               ["api", "utils"],
               ["model"],
+              ["utils"],
               ["constants"],
               ["^.+\\.s?css$"]
             ]
