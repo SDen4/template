@@ -9,7 +9,6 @@
     "react",
     "@typescript-eslint",
     "simple-import-sort",
-    "jsx-a11y",
     "import"
   ],
   "extends": [
@@ -32,7 +31,6 @@
     "operator-linebreak": "off",
     "no-param-reassign": "off",
     "arrow-body-style": "off",
-    "jsx-a11y/label-has-associated-control": "off",
     "react/jsx-one-expression-per-line": "off",
     "no-unneeded-ternary": "off",
     "object-curly-newline": "off",

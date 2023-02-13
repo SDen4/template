@@ -10,7 +10,6 @@ import { reset, rndData } from 'store/main/reducers';
 import { initDataSelect, loadingSelect } from 'selectors/main';
 
 import styles from './styles.css';
-
 // only for example of lazy import ;-)
 const LazyButton = lazy(() => import('components/ui/Button'));
 
