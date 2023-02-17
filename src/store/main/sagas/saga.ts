@@ -1,11 +1,11 @@
 import { SagaIterator } from 'redux-saga';
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { httpRequest } from 'api/httpRequest';
-
 import { getInitDataSaga } from '../actions';
 
 import { initData, loading } from '../reducers';
+
+import { httpRequest } from 'api/httpRequest';
 
 function* getInitData() {
   yield put(loading(true));

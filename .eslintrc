@@ -78,7 +78,7 @@
       "all"
     ],
     "no-mixed-operators": "error",
-    "camelcase": "warn",
+    "camelcase": "off",
     "no-console": "warn",
     "max-len": "warn",
     "dot-notation": "warn",
