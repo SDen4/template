@@ -48,14 +48,14 @@ export const App: FC = () => {
           />
         </Suspense>
       </section>
-
       <section className={styles.section}>
         <Result />
       </section>
-
       <section className={styles.section}>
         {loading ? <p>Loading...</p> : <img src={initData} alt="todoImage" />}
       </section>
+
+      <section className={styles.section}>{process.env.TEMPLATE_VAR}</section>
     </main>
   );
 };
