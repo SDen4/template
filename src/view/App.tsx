@@ -1,4 +1,5 @@
-import React, { FC, lazy, Suspense, useEffect } from 'react';
+import type { FC } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from 'components/Header';

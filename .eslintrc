@@ -50,6 +50,9 @@
     "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "warn", {"prefer": "type-imports"}
+    ],
     "max-classes-per-file": "off",
     "prefer-const": "off",
     "arrow-parens": "off",
