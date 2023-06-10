@@ -1,7 +1,7 @@
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import React from 'react';
 
-import classes from './styles.css';
+import classes from './styles.module.css';
 
 export const Flex: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement>>> = ({
   children,

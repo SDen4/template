@@ -10,6 +10,7 @@
 - Redux-toolkit
 - Jest
 - CSS
+- Vite
 
 ---
 

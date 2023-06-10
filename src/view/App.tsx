@@ -10,7 +10,7 @@ import { reset, rndData } from 'store/main/reducers';
 
 import { initDataSelect, loadingSelect } from 'selectors/main';
 
-import styles from './styles.css';
+import styles from './styles.module.css';
 // only for example of lazy import ;-)
 const LazyButton = lazy(() => import('components/ui/Button'));
 
@@ -53,10 +53,16 @@ export const App: FC = () => {
         <Result />
       </section>
       <section className={styles.section}>
-        {loading ? <p>Loading...</p> : <img src={initData} alt="todoImage" />}
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <img src={initData as string} alt="todoImage" />
+        )}
       </section>
 
-      <section className={styles.section}>{process.env.TEMPLATE_VAR}</section>
+      <section className={styles.section}>
+        {import.meta.env.VITE_APP_TEMPLATE_VAR}
+      </section>
     </main>
   );
 };
