@@ -14,10 +14,6 @@
 
 ---
 
-[Demo](https://sden4.github.io/template/)
-
----
-
 ## husky pre-commit check:
 
 - tests
