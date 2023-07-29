@@ -1,16 +1,12 @@
-import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
 
-import { rootReducer } from 'store/rootReducer';
-import { rootSaga } from 'store/rootSaga';
+import { githubApi } from './github/githubApi';
 
-const sagaMiddleWare = createSagaMiddleware();
+import { rootReducer } from 'store/rootReducer';
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: { main: rootReducer, [githubApi.reducerPath]: githubApi.reducer },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(sagaMiddleWare),
+    getDefaultMiddleware().concat(githubApi.middleware),
   devTools: process.env.NODE_ENV !== 'production',
 });
-
-sagaMiddleWare.run(rootSaga);

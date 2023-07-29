@@ -1,14 +1,12 @@
 import type { FC } from 'react';
 import React, { lazy, Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Header } from 'components/Header';
 import { Result } from 'components/Result';
 
-import { getInitDataSaga } from 'store/main/actions';
+import { useGetUserQuery } from 'store/github/githubApi';
 import { reset, rndData } from 'store/main/reducers';
-
-import { initDataSelect, loadingSelect } from 'selectors/main';
 
 import styles from './styles.module.css';
 // only for example of lazy import ;-)
@@ -17,12 +15,9 @@ const LazyButton = lazy(() => import('components/ui/Button'));
 export const App: FC = () => {
   const dispatch = useDispatch();
 
-  const initData = useSelector(initDataSelect);
-  const loading = useSelector(loadingSelect);
+  const { data, isLoading } = useGetUserQuery();
 
   useEffect(() => {
-    dispatch(getInitDataSaga());
-
     return () => {
       dispatch(reset());
     };
@@ -53,10 +48,10 @@ export const App: FC = () => {
         <Result />
       </section>
       <section className={styles.section}>
-        {loading ? (
+        {isLoading ? (
           <p>Loading...</p>
         ) : (
-          <img src={initData as string} alt="todoImage" />
+          <img src={data?.avatar_url} alt="todoImage" />
         )}
       </section>
 
