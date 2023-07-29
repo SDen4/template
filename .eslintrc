@@ -19,12 +19,12 @@
   ],
   "env": { "browser": true, "jest": true },
   "rules": {
+    "sort-imports": "off",
     "no-shadow": "off",
     "no-plusplus": "off",
     "no-confusing-arrow": "off",
     "react/jsx-curly-newline": "off",
     "implicit-arrow-linebreak": "off",
-    "import/no-unresolved": "off",
     "react/display-name": "off",
     "operator-linebreak": "off",
     "no-param-reassign": "off",
@@ -75,24 +75,9 @@
     "no-continue": "warn",
     "unicode-bom": "off",
     "no-process-exit": "error",
-    "import/first": "error",
     "import/order": "off",
     "import/extensions": "off",
-    "import/newline-after-import": "error",
-    "import/no-amd": "error",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true,
-        "peerDependencies": true,
-        "optionalDependencies": false
-      }
-    ],
-    "import/no-mutable-exports": "error",
-    "import/no-named-default": "error",
-    "import/no-named-export": "off",
-    "import/no-self-import": "error",
-    "import/prefer-default-export": "off"
+    "import/no-extraneous-dependencies": "off"
   },
   "settings": {
     "react": { "pragma": "React", "version": "detect" },

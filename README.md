@@ -10,10 +10,7 @@
 - Redux-toolkit
 - Jest
 - CSS
-
----
-
-[Demo](https://sden4.github.io/template/)
+- Vite
 
 ---
 
