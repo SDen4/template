@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Header } from 'components/Header';
@@ -15,9 +15,13 @@ const LazyButton = lazy(() => import('components/ui/Button'));
 export const App: FC = () => {
   const dispatch = useDispatch();
 
-  const { data, isLoading } = useGetUserQuery();
+  const [path, setPath] = useState('');
+
+  const { data, isLoading } = useGetUserQuery(path);
 
   useEffect(() => {
+    setPath(`users/a${(Math.random() * 10).toFixed()}`);
+
     return () => {
       dispatch(reset());
     };

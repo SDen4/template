@@ -4,8 +4,8 @@ export const githubApi = createApi({
   reducerPath: 'githubReducer',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.github.com/' }),
   endpoints: (build) => ({
-    getUser: build.query<{ avatar_url: string }, void>({
-      query: () => `users/a${(Math.random() * 10).toFixed()}`,
+    getUser: build.query<{ avatar_url: string }, string>({
+      query: (path: string) => path,
     }),
   }),
 });
