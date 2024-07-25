@@ -1,18 +1,18 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { AppStateType } from 'store/rootReducer';
+import type { TAppState } from 'store/rootReducer';
 
 export const initDataSelect = createSelector(
-  (store: AppStateType) => store.main.initData,
+  (store: TAppState) => store.main.initData,
   (initData) => initData,
 );
 
 export const rndDataSelect = createSelector(
-  (store: AppStateType) => store.main.rndData,
+  (store: TAppState) => store.main.rndData,
   (rndData) => rndData,
 );
 
 export const loadingSelect = createSelector(
-  (store: AppStateType) => store.main.loading,
+  (store: TAppState) => store.main.loading,
   (loading) => loading,
 );

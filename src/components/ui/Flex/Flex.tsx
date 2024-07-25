@@ -8,10 +8,8 @@ export const Flex: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement>>> = ({
   className,
   style,
   ...props
-}) => {
-  return (
-    <div className={`${classes.flex} ${className}`} style={style} {...props}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div className={`${classes.flex} ${className}`} style={style} {...props}>
+    {children}
+  </div>
+);

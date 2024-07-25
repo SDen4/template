@@ -28,7 +28,6 @@
     "react/display-name": "off",
     "operator-linebreak": "off",
     "no-param-reassign": "off",
-    "arrow-body-style": "off",
     "react/jsx-one-expression-per-line": "off",
     "no-unneeded-ternary": "off",
     "object-curly-newline": "off",
@@ -77,7 +76,25 @@
     "no-process-exit": "error",
     "import/order": "off",
     "import/extensions": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["snake_case", "camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": "typeAlias",
+        "format": ["PascalCase"],
+        "custom": { "regex": "^T[A-Z]", "match": true }
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": { "regex": "^I[A-Z]", "match": true }
+      }
+    ]
   },
   "settings": {
     "react": { "pragma": "React", "version": "detect" },

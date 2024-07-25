@@ -20,3 +20,9 @@
 - eslint
 
 ---
+
+## eslint
+
+`npx eslint 'src/**/*.ts{,x}' --ignore-path .eslintignore`
+
+`npx eslint --fix 'src/**/*.ts{,x}' --ignore-path .eslintignore`

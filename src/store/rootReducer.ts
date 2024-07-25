@@ -6,4 +6,4 @@ export const rootReducer = combineReducers({
   main: mainReducer,
 });
 
-export type AppStateType = ReturnType<typeof rootReducer>;
+export type TAppState = ReturnType<typeof rootReducer>;
