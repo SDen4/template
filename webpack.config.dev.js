@@ -10,7 +10,7 @@ delete process.env.TS_NODE_PROJECT;
 
 module.exports = {
   entry: './src/index',
-  devtool: 'source-map',
+  devtool: 'eval',
   mode: 'development',
   devServer: {
     open: true,
